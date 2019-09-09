@@ -1,0 +1,40 @@
+<div class="login-page" [@routerTransition]>
+        <p-growl [(value)]="msgs"></p-growl>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h1>Sample Template</h1>
+            <form [formGroup]="upLoginForm" *ngIf="showLoginUser == true"
+                            (ngSubmit)="Login_up(upLoginForm)">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" formControlName="username" required tabindex="1" #username autofocus class="form-control input-underline input-lg" id=""
+                            placeholder="{{ 'Email' | translate }}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id=""
+                            placeholder="{{ 'Password' | translate }}" formControlName="password" required #password tabindex="2"
+                            autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="remember" id="remember_me" formControlName="remember_me"> Remember Me
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn rounded-btn" id="login_submit"
+                    [class.btn_disabled]="disableLoginSubmit == true " [disabled]="disableLoginSubmit">
+                    Login
+                </button>
+                <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']"
+                    (click)="onLoggedin()">{{ 'Log in' | translate }}</a> -->
+                &nbsp;
+                <a href="javascript:void(0);" (click)="forgotPassword()" class="btn rounded-btn">
+                    Forgot Your Password?
+                </a>
+                <!-- <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a> -->
+            </form>
+        </div>
+    </div>
+</div>

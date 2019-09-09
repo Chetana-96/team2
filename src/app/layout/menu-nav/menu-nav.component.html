@@ -1,0 +1,180 @@
+
+
+
+<mat-toolbar color="secondary">
+
+    <mat-toolbar-row>
+    <!-- <h1>YOURDRS</h1> -->
+    <img src="assets/unnamed.png" height=90px width=200px>
+    <div class="form-group col-md-3">
+    <ejs-multiselect id='localData' #local [dataSource]='arr1' [fields]='localFields' [placeholder]='localWaterMark'>search</ejs-multiselect>
+    </div>
+    <mat-menu #appMenu="matMenu">
+    <button mat-menu-item (click)='onClickAD()'>Adjuster Dashboard</button>
+    <button mat-menu-item (click)='onClickOD()'>Office Dashboard</button>
+
+    </mat-menu>
+
+
+    <!-- <input type="text" placeholder="search"> -->
+
+    <!-- <form class="form-inline waves-light" mdbWavesEffect>
+    <div class="md-form mt-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    </div>
+    </form> -->
+
+
+
+    <!-- <img src="/Images/icons/top/topnavbaricons/Dashboards.png"> -->
+    <button style="margin-left: 1100px;" mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+    </button>
+    <!-- <mat-icon style="margin-left: 1100px;" aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+    <!-- hello -->
+    <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon" md-menu-align-target >menu</mat-icon>
+
+    </button>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-tab-group>
+    <mat-tab label="Appointments Dashboard" *ngIf="officeDashboard"></mat-tab>
+    <mat-tab label="Appointments Scheduler" *ngIf="officeDashboard">
+
+
+    <form>
+    <mat-accordion>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+    <h5>Search Filter</h5>
+    </mat-panel-title>
+    </mat-expansion-panel-header>
+
+
+
+
+    <div class="form-group row">
+
+
+    <div class="form-group col-md-3">
+
+    <label>Practice</label><br>
+    <ejs-multiselect id='localData' #local [dataSource]='arr' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>
+    </div>
+
+
+    <div class="form-group col-md-3">
+    <label >Location</label><br>
+    <ejs-multiselect id='localData' #local [dataSource]='arr2' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>
+    </div>
+
+
+
+    <div class="form-group col-md-3">
+
+    <label >Provider/Physician Assistant</label>
+    <ejs-multiselect id='localData' #local [dataSource]='arr3' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>
+    </div>
+
+    <div class="form-group col-md-3">
+    <label >Specialty</label><br>
+    <ejs-multiselect id='localData' #local [dataSource]='arr' [fields]='localFields' [placeholder]='localWaterMark'></ejs-multiselect>
+    </div>
+    </div>
+
+
+    <div class="form-row">
+    <div class="form-group col-md-2">
+    <label >Search From Date</label><br>
+    <input type="date" name="bday">
+    </div>
+
+    <div class="form-group col-md-1">
+    <input type="checkbox" >
+    <label>Clinical</label>
+    </div>
+    <div class="form-group col-md-1">
+    <input type="checkbox" >
+    <label>PT</label>
+    </div>
+    <div class="form-group col-md-1">
+    <input type="checkbox" >
+    <label>Dx</label>
+    </div>
+    <div class="form-group col-md-1">
+    <input type="checkbox" >
+    <label>Concierge</label>
+    </div>
+    <div class="form-group col-md-2">
+    <label >Scheduler Start Time</label>
+    <select class="form-control">
+    <option value="10am">10am</option>
+    <option value="11am">11am</option>
+    <option value="12am">12am</option>
+    <option value="1pm">1pm</option>
+
+    </select>
+    </div>
+    <div class="form-group col-md-2">
+    <label >Scheduler End Time</label>
+    <select class="form-control">
+    <option value="7am">7am</option>
+    <option value="8am">8am</option>
+    <option value="9am">9am</option>
+    <option value="10pm">10am</option>
+
+    </select>
+    </div>
+
+    <div class="form-group col-md-2">
+
+    <button class="btn btn-primary" (click)=" openEdit(form)" style="margin-top: 28px">Search</button>
+    </div>
+    </div>
+
+    </mat-expansion-panel>
+    </mat-accordion>
+    </form>
+    </mat-tab>
+    </mat-tab-group>
+<ng-template #form>
+    <div class="control-section">
+
+
+        <ejs-schedule #scheduleObj cssClass='schedule-group-custom-work-days' width='100%' height='650px' [currentView]="currentView"
+            [group]="group" [selectedDate]="selectedDate"
+
+            (actionBegin)="onActionBegin($event)"
+              [allowResizing]="allowResizing"
+            [allowDragAndDrop]="allowDragDrop">
+            <ng-template #resourceHeaderTemplate let-data>
+                <div class='template-wrap'>
+                    <div class="resource-image {{getDoctorImage(data)}}"></div>
+                    <div class="resource-details">
+                        <div class="resource-name">{{getDoctorName(data)}}</div>
+                        <div class="resource-designation">{{getDoctorLevel(data)}}</div>
+
+                    </div>
+
+
+                </div>
+            </ng-template>
+            <e-views>
+                <e-view option="WorkWeek"></e-view>
+                <e-view option="Month"></e-view>
+            </e-views>
+            <e-resources>
+                <e-resource Provider="xyz" field='DoctorId' title='Doctor Name' name='Doctors' [dataSource]='resourceDataSource' textField='text' idField='id'
+                    colorField='color' workDaysField='workDays' startHourField='startHour' endHourField='endHour'>
+                </e-resource>
+            </e-resources>
+        </ejs-schedule>
+       </div>
+</ng-template>

@@ -1,0 +1,137 @@
+.sr-only{
+    display: inline;
+    }
+    .active-cyan-2 input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #2b0eaf;
+    box-shadow: 0 1px 0 0 #924de1;
+    }
+    example-small-box, .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    }
+
+    .example-small-box {
+    height: 100px;
+    width: 100px;
+    color: azure;
+    }
+
+    .example-large-box {
+    height: 300px;
+    width: 1500px;
+    }
+    body {
+    background-color: blue;
+    }
+    .mat-toolbar, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6 {
+    font: 500 20px/32px Roboto,"Helvetica Neue",sans-serif;
+    margin: 0;
+    padding-right: 609px;
+    }
+    input.form-control {
+    padding-right: 200px;
+    }
+    .example-large-box.mat-elevation-z4.ng-star-inserted {
+    background-color:whitesmoke;
+    }
+    button.btn.btn-primary {
+    padding-right: -2px;
+    float: right;
+    }
+    .schedule-group-custom-work-days.e-schedule .e-month-view .e-work-days.willsmith,
+    .schedule-group-custom-work-days.e-schedule .e-vertical-view .e-work-hours.willsmith {
+    background-color: #faebd7; }
+    .schedule-group-custom-work-days.e-schedule .e-month-view .e-work-days.alice,
+    .schedule-group-custom-work-days.e-schedule .e-vertical-view .e-work-hours.alice {
+    background-color: #deecfc;
+    }
+
+    .schedule-group-custom-work-days.e-schedule .e-month-view .e-work-days.robson,
+    .schedule-group-custom-work-days.e-schedule .e-vertical-view .e-work-hours.robson {
+    background-color: #deeeac;
+    }
+
+    .schedule-group-custom-work-days.e-schedule .e-vertical-view .e-resource-cells {
+    height: 62px;
+    }
+    .schedule-group-custom-work-days.e-schedule .template-wrap {
+    display: flex;
+    text-align: left }
+
+    .schedule-group-custom-work-days.e-schedule .template-wrap .resource-image {
+    background-repeat: no-repeat; background-size: 45px;
+    height: 45px;
+    width: 45px; }
+
+    .schedule-group-custom-work-days.e-schedule .template-wrap .resource-details {
+    padding-left: 10px;
+    }
+
+    .schedule-group-custom-work-days.e-schedule .template-wrap .resource-details .resource-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+    }
+    .schedule-group-custom-work-days.e-schedule.e-device .template-wrap .resource-details .resource-name {
+    font-size: inherit;
+    font-weight: inherit;
+    }
+    .schedule-group-custom-work-days.e-schedule.e-device .e-resource-tree-popup .e-fullrow {
+    height: 50px;
+    }
+
+    .schedule-group-custom-work-days.e-schedule.e-device .template-wrap .resource-details .resource-designation { display: none;
+    }
+    input.checkbox {
+    height: 5px;
+    width: 5px;
+    }
+    label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: small;
+
+    }
+
+    input.form-control {
+    width: 10px;
+    float: right;
+    }
+    .ng-autocomplete {
+    width:100%;
+    max-width: 200px;
+    display: table;
+    margin: 0 auto;
+    }
+    select.form-control {
+    float: left;
+    }
+    button.btn.btn-primary {
+    margin-right: 175px;
+    }
+    select {
+    width: 250px;
+    }
+    .form-control{
+    font-size: 14px;
+    border-left: 1px solid #CCC !important;
+    border-top: 1px solid #CCC !important;
+    border-right: 1px solid #CCC !important;
+    border-bottom: 3px solid #36cc95
+    }
+    form label{
+    font-weight:bold;
+    }
+    .form {
+    background-color: rgb(44, 4, 4);
+    }
+    mat-panel-title.mat-expansion-panel-header-title {
+    background-color: dimgrey;
+    }
+    /* select {
+    padding-bottom: 11px;
+    } */
