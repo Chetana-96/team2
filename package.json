@@ -32,7 +32,7 @@
     "@syncfusion/ej2-angular-calendars": "^17.2.49",
     "@syncfusion/ej2-angular-dropdowns": "^17.2.49",
     "@syncfusion/ej2-angular-schedule": "^17.2.49",
-    "chart.js": "2.7.3",
+    "chart.js": "2.9.4",
     "core-js": "2.5.7",
     "crypto-js": "^3.1.9-1",
     "font-awesome": "4.7.0",
